@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendor/assets/css/bootstrap-icons.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="vendor/assets/css/head.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="vendor/assets/css/fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" href="vendor/assets/css/style.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <title>Alat Berat</title>
+
+    <style>
+        body
+{
+  background-color:#f5f5f5;
+}
+.imagePreview {
+    width: 100%;
+    height: 180px;
+    background-position: center center;
+  background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
+  background-color:#fff;
+    background-size: cover;
+  background-repeat:no-repeat;
+    display: inline-block;
+  box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+}
+.btn-primary
+{
+  display:block;
+  border-radius:0px;
+  box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
+  margin-top:-5px;
+}
+.imgUp
+{
+  margin-bottom:15px;
+}
+.del
+{
+  position:absolute;
+  top:0px;
+  right:15px;
+  width:30px;
+  height:30px;
+  text-align:center;
+  line-height:30px;
+  background-color:rgba(255,255,255,0.6);
+  cursor:pointer;
+}
+.imgAdd
+{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background-color:#4bd7ef;
+  color:#fff;
+  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
+  text-align:center;
+  line-height:30px;
+  margin-top:0px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+
+#wizardNav {
+  overflow: hidden;
+  width: 100%;
+}
+
+#wizardNav a {
+  background-color: #E4E4E4;
+  border-radius: 5px;
+  display: inline;
+  padding: 10px 20px 10px 50px;
+  width: auto;
+  position: relative;
+  min-width: 33%;
+  height: 70px;
+}
+
+#wizardNav a::first-child {
+  padding: 10px 20px;
+}
+
+.text {
+  z-index: 9;
+  position: absolute;
+}
+
+#wizardNav a::before, #wizardNav a::after {
+	content: " ";
+  top: -10px;
+  bottom: 0;
+	height: 62px;
+  width: 62px;
+  position: absolute;
+  transform: rotate(45deg);
+  transform-origin: 0 0;
+}
+
+#wizardNav a::before {
+    z-index: 3;
+    background: white;
+    right: -56px;
+}
+
+#wizardNav a:after {
+	  background: #E4E4E4;
+    right: -47px;
+    z-index: 3;
+}
+
+#wizardNav a:hover, #wizardNav a:hover:after {
+  background: blue;
+  color: white;
+}
+
+#wizardNav a:last-child::after, #wizardNav a:last-child::before  {
+  content: none;
+}
+    </style>
+
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="vendor/assets/img/logo.jpg"
+              style="width: 50px"
+              alt="Logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#main-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="kategori.html">Kategori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="beli.html">Beli</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="fitur-iklan.html">Jual</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact-us.html">Login/Daftar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <div class="container">
+
+      
+      <div class="formwiiz">
+        <div class="row">
+          <div class="col-12">
+    <div class="modal" id="registrationModal" style="position: relative; display: block; width: 900px;">
+	<div class="modal-dialog modal-lg" role="document">
+		<div id="bs4wizard" class="modal-content">
+			<div class="box-head box-head-accent-2" style="position: absolute;"></div>
+			<div class="modal-header">
+				<nav id="wizardNav" class="nav" style="display: flex;">
+					<a class="nav-link active" href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+          <div class="text text-dark">
+            
+          Create Your Ad
+          </div>
+           
+
+					</a>
+				<a class="nav-link active" href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+          <div class="text text-dark">
+            
+          Add Photo
+          </div>
+           
+
+					</a>
+
+          
+						<a class="nav-link active" href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+          <div class="text text-dark">
+            
+          Review Your add
+          </div>
+           
+
+					</a>
+
+          	<a class="nav-link active" href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Step 4" style="margin-top: 10px;">
+          <div class="text text-dark">
+            
+          Check Out And Finish
+          </div>
+           
+
+					</a>
+
+          	
+				</nav>
+			
+			</div>
+			<div class="modal-body">
+				<div id="wizardTab" class="tab-content">
+					<div class="tab-pane fade show active" role="tabpanel" id="step1">
+			<div class="progress">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50% Lengkap</div>
+</div>
+					</div>
+		
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</div>
+          </div>
+        </div>
+    
+      </div>
+        <div class="row">
+          <div class="col-md-8">
+          <div class="alert alert-secondary" role="alert" style="width: 700px;">
+            Beritahu kami tentang Alat Berat Anda
+           </div>
+           <h5>Tambah Photo</h5>
+           <h6>Meningkatkan Iklan Anda dengan Detail Photo :</h6>
+            <p style="color: orange; font-size: 20px;">Catatan :</p>
+             
+               <li>Mohon Unggah hanya tipe file.jpg atau .gif</li>
+               <li>Gambar tidak lebih dari 2MB (2592x1920)</li>
+               <li>Nama file tidak menggunakan karakter spesial, termasuk : %!@#&*^$, dll.</li>
+
+           <br>
+           <div class="container">
+            <div class="row">
+            <div class="col-sm-4 imgUp">
+              <div class="imagePreview"></div>
+          <label class="btn btn-primary">
+           Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width: 500px;height: 0px;overflow: hidden;">
+          </label>
+            </div><!-- col-2 -->
+            <!-- <i class="fa fa-plus imgAdd"></i> -->
+
+            <div class="col-sm-4 imgUp">
+              <div class="imagePreview"></div>
+          <label class="btn btn-primary">
+           Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width: 500px;height: 0px;overflow: hidden;">
+          </label>
+            </div><!-- col-2 -->
+            <!-- <i class="fa fa-plus imgAdd"></i> -->
+
+            <div class="col-sm-4 imgUp">
+              <div class="imagePreview"></div>
+          <label class="btn btn-primary">
+           Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width: 500px;height: 0px;overflow: hidden;">
+          </label>
+          <br>
+          <br>
+            </div><!-- col-2 -->
+            
+            <!-- <i class="fa fa-plus imgAdd"></i> -->
+           </div><!-- row -->
+          </div><!-- container -->
+
+
+            <div class="container">
+            <div class="row">
+            <div class="col-sm-4 imgUp">
+              <div class="imagePreview"></div>
+          <label class="btn btn-primary">
+           Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width: 500px;height: 0px;overflow: hidden;">
+          </label>
+            </div><!-- col-2 -->
+            <!-- <i class="fa fa-plus imgAdd"></i> -->
+
+            <div class="col-sm-4 imgUp">
+              <div class="imagePreview"></div>
+          <label class="btn btn-primary">
+           Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width: 500px;height: 0px;overflow: hidden;">
+          </label>
+            </div><!-- col-2 -->
+            <!-- <i class="fa fa-plus imgAdd"></i> -->
+
+            <div class="col-sm-4 imgUp">
+              <div class="imagePreview"></div>
+          <label class="btn btn-primary">
+           Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width: 500px;height: 0px;overflow: hidden;">
+          </label>
+          <br>
+          <br>
+            </div><!-- col-2 -->
+            
+            <!-- <i class="fa fa-plus imgAdd"></i> -->
+           </div><!-- row -->
+          </div><!-- container -->
+
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <a href="createAd1.html"> <button type="button" class="btn btn-warning btn-lg btn-block" style="width: 200px;"><i class="fas fa-chevron-left"></i> Kembali</button></a>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <a href="createAd3.html"> <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 200px; margin-top: 1px;">Lanjutkan <i class="fas fa-chevron-right"></i></button></a>
+            </div>
+            
+            
+
+          </div>
+          
+          <br>
+
+          
+
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 300px;">
+                <div class="card-header">
+                 <strong>  Selamat datang, Ackerman</strong>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Ringkasan Tagihan :</h5>
+                  <h6 class="card-text">Iklan Premium : <span>IDR 1.500.000</span></h6>
+                  <br>
+                  <h6 class="card-text">Photo Tambahan : <span>IDR 0,-</span></h6>
+                  <br>
+                  <h6 class="card-text">Feature Ad : <span>IDR 0,-</span></h6>
+                  <div class="card-footer" style="height: 12px;">
+                 <strong>Total : <span>	IDR 1.500.000</span></strong>
+                  </div>
+                </div>
+              </div>
+          </div>
+         </div>
+    
+
+
+         
+    </div>
+
+
+        <div
+      class="jumbotron jumbotron-fluid mt-5 mb-0"
+      style="background-color: #f9f8fe"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img
+              src="vendor/assets/img/logo.png"
+              class="img-thumbnail"
+              alt="..."
+              width="80"
+            />
+            <p class="mt-3 font-weight-bold">PT. Arti Sentral Global</p>
+            <p class="mt-3">
+              Office 8 Building Level 18 A Jl. Jend Sudirman Kav 52 - 53
+              Sudirman Central District (SCBD) Jakarta Selatan - Indonesia 12190
+            </p>
+            <p class="mt-3">Phone : +62 21 30490014</p>
+          </div>
+          <div class="col-md-4 mt-2">
+            <p class="font-weight-bold">Suka Artikel Kami</p>
+            <p class="mt-3">
+              Dapatkan Info terbaru dari AlatBerat.com langsung di email anda.
+              masukkan email anda di bawah ini
+            </p>
+            <!-- Form -->
+            <form>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-9">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                      placeholder="Email anda ..."
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <button
+                      type="button"
+                      class="btn btn-warning btn-sm mt-3 text-white"
+                      style="background-color: #f89f3c"
+                    >
+                      Berlangganan
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <p class="font-weight-bold mt-2">Find Us :</p>
+            <ul class="list-unstyled">
+              <li>
+                <a href="" class="_ads">Home</a>
+              </li>
+              <li class="mt-2">
+                <a href="tentang.html" class="_ads">Tentang Kami</a>
+              </li>
+              <li class="mt-2">
+                <a href="" class="_ads">Facebook</a>
+              </li>
+              <li class="mt-2">
+                <a href="" class="_ads">Twitter</a>
+              </li>
+              <li class="mt-2">
+                <a href="" class="_ads">Instagram</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- about -->
+
+
+
+
+
+
+
+    <script>
+        $(".imgAdd").click(function(){
+  $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
+});
+$(document).on("click", "i.del" , function() {
+// 	to remove card
+  $(this).parent().remove();
+// to clear image
+  // $(this).parent().find('.imagePreview').css("background-image","url('')");
+});
+$(function() {
+    $(document).on("change",".uploadFile", function()
+    {
+    		var uploadFile = $(this);
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+ 
+        if (/^image/.test( files[0].type)){ // only image file
+            var reader = new FileReader(); // instance of the FileReader
+            reader.readAsDataURL(files[0]); // read the local file
+ 
+            reader.onloadend = function(){ // set image data as background of div
+                //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
+            }
+        }
+      
+    });
+});
+
+ $(".next-step,.skip-step").click(function (e) {
+			var $activeN = $('#wizardNav .nav-link.active').next();
+			$activeN.removeClass('disabled');
+			$activeN.prev().addClass('pass');
+			$activeN.trigger("click");
+		});
+		$(".prev-step").click(function (e) {
+			var $activeP = $('#wizardFormNav .nav-link.active').prev();
+			$activeP.trigger("click");
+			if ($activeP.hasClass('active')) {
+				$activeP.removeClass('pass');
+			} else {
+				$activeP.addClass('pass')
+			};
+		});
+    </script>
+
+
+
+
+      <!--  Separate Popper and Bootstrap JS  -->
+      <script src="vendor/assets/js/jquery-3.5.1.slim.min.js"></script>
+      <script src="vendor/assets/js/popper.min.js"></script>
+      <script src="vendor/assets/js/bootstrap.min.js"></script>
+  
+      <!-- AOS JS -->
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+    </body>
+  </html>
+  
