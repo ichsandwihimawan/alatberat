@@ -90,58 +90,58 @@
 
 
  <!-- Navbar -->
- <div class="container">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img
-            src="vendor/assets/img/logo.jpg"
-            style="width: 50px"
-            alt="Logo"
-          />
-        </a>
-        <button
-          class="navbar-toggler collapsed"
-          type="button"
-          data-toggle="collapse"
-          data-target="#main-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="main-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="kategori.html">Kategori</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="beli.html">Beli</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="fitur-iklan.html">Jual</a>
-            </li> 
+  <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="vendor/assets/img/logo.jpg"
+              style="width: 50px"
+              alt="Logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#main-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="kategori.html">Kategori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="beli.html">Beli</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="fitur-iklan.html">Jual</a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="blog.html">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="aboutus.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactus.html">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact-us.html">Login/Daftar</a>
-            </li>
-          </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login/Daftar</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
 
 
   <div class="container">
@@ -244,8 +244,8 @@
                   <ul>
                     <img src="/vendor/assets/img/img/logo.png" style="margin-bottom: 50px;" alt=""> <br>
                     <i class="fas fa-user-alt"> <a href="#">Ackerman</a></i><br>
-                    <i class="fas fa-phone-alt"> <a href="#">Lihat Nomor Telepon</a></i><br>
-                    <i class="fas fa-envelope"> <a href="#">Bocibatas2016@gmail.com</a></i>
+                    <i class="fas fa-phone-alt"> <a href="#" id="tel">Lihat Nomor Telepon</a></i><br>
+                    <i class="fas fa-envelope"> <a href="#" id="email">Lihat Email</a></i>
                   </ul>
               </div>
               
@@ -266,7 +266,7 @@
 
        </div>
        <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card" style="width: 300px; height: 300px;">
+        <div class="card" style="width: 300px; height: 300px; margin-left: 100px;">
             <div class="card-header" style="background-color: orange;">
              <strong>Peta</strong>
             </div>
@@ -335,8 +335,8 @@ Fuel :G</p></figcaption>
                   <ul>
                     <img src="/vendor/assets/img/img/logo.png" style="margin-bottom: 50px;" alt=""> <br>
                     <i class="fas fa-user-alt"> <a href="#">Ackerman</a></i><br>
-                    <i class="fas fa-phone-alt"> <a href="#">Lihat Nomor Telepon</a></i><br>
-                    <i class="fas fa-envelope"> <a href="#">Bocibatas2016@gmail.com</a></i>
+                    <i class="fas fa-phone-alt"> <a href="#" id="tel1">Lihat Nomor Telepon</a></i><br>
+                    <i class="fas fa-envelope"> <a href="#" id="email1">Lihat Email</a></i>
                   </ul>
               </div>
               
@@ -466,6 +466,35 @@ Fuel :G</p></figcaption>
      <script src="vendor/assets/js/popper.min.js"></script>
      <script src="vendor/assets/js/bootstrap.min.js"></script>
  
+
+     <script>
+   document.getElementById('tel').onclick = function changee() {
+
+   document.getElementById('tel').textContent = "089517322791";
+   document.getElementById('tel').style = "Color: grey";
+
+   
+
+   
+}
+
+document.getElementById('email').onclick = function d() {
+  document.getElementById('email').textContent = "ichsandwihimawan@gmail.com";
+  document.getElementById('email').style = "Color: grey";
+}
+
+
+document.getElementById('tel1').onclick = function b() {
+  document.getElementById('tel1').textContent = "089517322791";
+  document.getElementById('tel1').style = "Color: grey";
+}
+
+
+document.getElementById('email1').onclick = function c() {
+  document.getElementById('email1').textContent = "ichsandwihimawan@gmail.com";
+  document.getElementById("email1").style = "Color: grey";
+}
+     </script>
      <!-- AOS JS -->
      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
      <script>
